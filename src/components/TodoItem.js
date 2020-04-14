@@ -8,41 +8,10 @@ import { todos } from "../reducers/todos.js";
 
 export const TodoItem = ({ itemIndex }) => {
   // Get the item from the store based on the index
-  const item = useSelector((store) => store.todos.list.items[itemIndex]);
 
-  const dispatch = useDispatch();
+  // Create the onRemoveClicked handler
 
-  const onRemoveClicked = (e) => {
-    // Dispatch the remove todo event for this item
-    dispatch(
-      todos.actions.removeTodo({
-        itemIndex,
-      })
-    );
-  };
+  // Create the onChange handler for handling the done status
 
-  const handleOnChange = (e) => {
-    // Change the value of done for this item
-    dispatch(
-      todos.actions.setDone({
-        itemIndex: itemIndex,
-        done: !item.done,
-      })
-    );
-  };
-
-  return (
-    <div className={`todo-item ${item.done ? "done" : ""}`}>
-      <input
-        type="checkbox"
-        onChange={handleOnChange}
-        className="todo-item-check"
-        checked={item.done ? "checked" : ""}
-      ></input>
-      <span className="todo-item-description">{item.description}</span>
-      <a className="todo-item-remove" onClick={onRemoveClicked}>
-        [Remove]
-      </a>
-    </div>
-  );
+  return <div></div>;
 };

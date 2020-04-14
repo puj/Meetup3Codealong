@@ -4,17 +4,9 @@ import { TodoInput } from "./TodoInput.js";
 import { useSelector } from "react-redux";
 
 export const TodoSummary = () => {
-  // Get list information for this list
-  const list = useSelector(store => store.todos.list);
+  // Get list information from the store, for this list
 
-  // Count the number of items that are done
-  const numDone = list.items.filter(item => item.done).length;
+  // Count the number of items that are done using filter
 
-  return (
-    <section className="todo-summary">
-      <h2>
-        {numDone}/{list.items.length} tasks done
-      </h2>
-    </section>
-  );
+  return <section className="todo-summary"></section>;
 };

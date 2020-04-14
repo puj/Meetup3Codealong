@@ -5,17 +5,12 @@ import { TodoSummary } from "./TodoSummary.js";
 import { useSelector } from "react-redux";
 
 export const TodoList = () => {
-  // Get list information for this list
-  const list = useSelector((store) => store.todos.list);
-  //   const [list, setList] = useState(useSelector((store) => store.todos.list));
+  // Get list information for this list from the store
 
-  return (
-    <section className="todo-list">
-      <TodoInput />
-      {list.items.map((item, index) => (
-        <TodoItem item={item} itemIndex={index} />
-      ))}
-      <TodoSummary />
-    </section>
-  );
+  /*
+    - Show TodoInput
+    - Show each TodoItem in the list
+    - Show TodoSummary
+  */
+  return <section className="todo-list"></section>;
 };

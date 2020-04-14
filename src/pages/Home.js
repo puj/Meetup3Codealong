@@ -5,28 +5,24 @@ import { TodoList } from "../components/TodoList.js";
 import { createStore, combineReducers } from "@reduxjs/toolkit";
 import { todos } from "../reducers/todos.js";
 
-// Tell redux about our reducers
-const reducer = combineReducers({ todos: todos.reducer });
+/*
+ PLAN 
+  - create TodoInput
+  - create store
+  - use Provider
+  - create TodoList
+  - create TodoItem
+  - create TodoSummary
+*/
 
-// Retrieve the existing state from localstorage if it exists
-const persistedState = localStorage.getItem("reduxState")
-  ? JSON.parse(localStorage.getItem("reduxState"))
-  : {};
+// StoreCreation : Tell redux about our reducers
 
-// Create the store using our reducers and the retrieved state
-const store = createStore(reducer, persistedState);
+// Persistence: Retrieve the existing state from localstorage if it exists
 
-// Tell the store to persist the state in localstorage after every action
-store.subscribe(() => {
-  localStorage.setItem("reduxState", JSON.stringify(store.getState()));
-});
+// StoreCreation: Create the store using our reducers and the retrieved state
+
+// Persistence: Tell the store to persist the state in localstorage after every action
 
 export const Home = () => {
-  return (
-    <Provider store={store}>
-      <main>
-        <TodoList></TodoList>
-      </main>
-    </Provider>
-  );
+  return <main></main>;
 };
